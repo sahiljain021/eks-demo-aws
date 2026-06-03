@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-demo
+  template:
+    metadata:
+      labels:
+        app: eks-demo
+    spec:
+      containers:
+      - name: eks-demo
+        image: 908027405956.dkr.ecr.ap-south-1.amazonaws.com/eks-demo:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 10
