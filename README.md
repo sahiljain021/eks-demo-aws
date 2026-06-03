@@ -41,7 +41,7 @@ Docker → ECR → EKS (Kubernetes) → LoadBalancer → User
 ![EKS](screenshots/eks.jpg)
 
 ### 🌐 App Live on Kubernetes
-![Live](screenshots/Hello_from_Kubernetes_.jpg)
+![Live](screenshots/Hello_from_Kubernetes!.jpg)
 
 ### 🖥️ kubectl get nodes
 ![Nodes](screenshots/kubectl_get_nodes.jpg)
